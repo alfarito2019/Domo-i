@@ -6,8 +6,9 @@
   
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="icon" type="image/png" href="IMAGENES/favicon.png">
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 
 </head>
 <body>
@@ -15,7 +16,7 @@
   <!-- NAV -->
   <nav>
     <div class="logo">
-        <img src="logo_mini2.png" alt="Logo pequeño" class="logo-small">
+        <img src="IMAGENES/logo_mini2.png" alt="Logo pequeño" class="logo-small">
       </div>
     <ul>
       <li><a href="#">Nosotros</a></li>
@@ -27,7 +28,7 @@
 
   <!-- Logo -->
   <section class="hero">
-    <img src="logo_gris.png" alt="Logo" class="main-logo" id="mainLogo" />
+    <img src="IMAGENES/logo_gris.png" alt="Logo" class="main-logo" id="mainLogo" />
     <h1 class="hero-text">
         <!-- <span>I</span><span>n</span><span>n</span><span>o</span><span>v</span><span>a</span><span>,&nbsp;</span>
         <span>C</span><span>r</span><span>e</span><span>a</span><span>,&nbsp;</span>
@@ -93,9 +94,9 @@
 
   <script>
     const images = [
-      "img1.jpg", "img2.jpg", "img3.jpg",
-      "img4.jpg", "img5.jpg", "img6.jpg",
-      "img7.jpg"
+      "IMAGENES/img1.jpg", "IMAGENES/img2.jpg", "IMAGENES/img3.jpg",
+      "IMAGENES/img4.jpg", "IMAGENES/img5.jpg", "IMAGENES/img6.jpg",
+      "IMAGENES/img7.jpg"
     ];
 
     let imageIndex = 0;
@@ -166,11 +167,11 @@
   const logo = document.getElementById('mainLogo');
 
   logo.addEventListener('mouseenter', () => {
-    logo.src = 'logo_gris.png'; // Cuando pase el cursor encima, cambia el logo
+    logo.src = 'IMAGENES/logo_gris.png'; // Cuando pase el cursor encima, cambia el logo
   });
 
   logo.addEventListener('mouseleave', () => {
-    logo.src = 'logo_gris.png'; // Cuando salga el cursor, vuelve al logo original
+    logo.src = 'IMAGENES/logo_gris.png'; // Cuando salga el cursor, vuelve al logo original
   });
 </script>
 

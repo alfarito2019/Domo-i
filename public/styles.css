@@ -5,7 +5,7 @@
 
   body {
     height: 100vh;
-    background-image: url('Degrade.png');
+    background-image: url('IMAGENES/Degrade.png');
     /*background-image: url('Fondo.png');*/
     /*background: radial-gradient(circle at center, #052049, #0191B4, #D2F1FF);*/
     /*background:radial-gradient(circle at top left, #fc6b05 5%, transparent 50%),
@@ -15,7 +15,7 @@
               #427f96;*/
     overflow: hidden;
     font-family: 'Poppins', sans-serif;
-    cursor: url('Mariposa2.png') 16 16, auto;
+    cursor: url('IMAGENES/Mariposa2.png') 16 16, auto;
     overflow-y: auto;
 
     /*background-size: contain; /* << importante para que no se deforme */
@@ -174,7 +174,7 @@
     position: relative;
     font-family: 'Comfortaa', cursive;
     /*background: linear-gradient(135deg, #FFDF88, #DD6902);*/
-    background-image: url('TarjetaHub.png');
+    background-image: url('IMAGENES/TarjetaHub.png');
     
     display: flex;
     align-items: flex-end; /* ✅ Ahora baja el contenido a la parte inferior */
@@ -203,7 +203,7 @@
     position: relative;
     font-family: 'Comfortaa', cursive;
     /*background: linear-gradient(135deg, #F3797B, #c41e32);*/
-    background-image: url('TarjetaCultura.png');
+    background-image: url('IMAGENES/TarjetaCultura.png');
     background-color:rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: flex-end; /* ✅ Ahora baja el contenido a la parte inferior */
@@ -232,7 +232,7 @@
     position: relative;
     font-family: 'Comfortaa', cursive;
     background-color:rgba(0, 0, 0, 0.3);
-    background-image: url('TarjetaInnovacionAbierta.png');
+    background-image: url('IMAGENES/TarjetaInnovacionAbierta.png');
     display: flex;
     align-items: flex-end;
     justify-content: center;
@@ -260,7 +260,7 @@
     position: relative;
     font-family: 'Comfortaa', cursive;
     /*background: linear-gradient(135deg, #0a9fff, #052049);*/
-    background-image: url('TarjetaIAP.png');
+    background-image: url('IMAGENES/TarjetaIAP.png');
     background-color:rgba(0, 0, 0, 0.3);
     display: flex;
     align-items: flex-end;
