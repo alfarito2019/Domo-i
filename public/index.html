@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Domo i</title>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <div class="logo">
+        <img src="logo_mini2.png" alt="Logo pequeño" class="logo-small">
+      </div>
+    <ul>
+      <li><a href="#">Nosotros</a></li>
+      <li><a href="#">Convocatorias</a></li>
+      <li><a href="#">Eventos</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+  </nav>
+
+  <!-- Logo -->
+  <section class="hero">
+    <img src="logo_gris.png" alt="Logo" class="main-logo" id="mainLogo" />
+    <h1 class="hero-text">
+        <!-- <span>I</span><span>n</span><span>n</span><span>o</span><span>v</span><span>a</span><span>,&nbsp;</span>
+        <span>C</span><span>r</span><span>e</span><span>a</span><span>,&nbsp;</span>
+        <span>P</span><span>o</span><span>t</span><span>e</span><span>n</span><span>c</span><span>i</span><span>a</span> -->
+        <span>Innova</span><span>-</span>
+        <span>Crea</span><span>-</span>
+        <span>Potencia</span>
+    </h1>
+      
+    <div class="scroll-indicator">⬇ Desliza para ver más ⬇</div>
+  </section>
+
+    <section class="unidades-section" id="unidadesID">
+      <h2 class="unidades-title">Unidades</h2>
+    </section>
+
+
+  <section class="tarjetas-container">
+    <div class="tarjeta1" id="tarjeta11"><div class="overlay"></div>Hub de diseño <button class="boton-ver-mas">Ver más</button> </div>
+    <div class="tarjeta2" id="tarjeta22"><div class="overlay"></div>Cultura <button class="boton-ver-mas">Ver más</button> </div>
+    <div class="tarjeta3" id="tarjeta33"><div class="overlay"></div>Innovación abierta <button class="boton-ver-mas">Ver más</button> </div>
+    <div class="tarjeta4" id="tarjeta44"><div class="overlay"></div>Investigación, alianzas y patentes <button class="boton-ver-mas">Ver más</button> </div>
+  </section>
+
+  <!-- <section class="proyectos-section">
+    <div class="proyecto-card" id="card1">Proyecto 1</div>
+    <div class="proyecto-card" id="card2">Proyecto 2</div>
+    <div class="proyecto-card" id="card3">Proyecto 3</div>
+  </section> -->
+
+
+  <section class="proyectos-section">
+    <div class="tarjeta-proyecto" id="proyecto1">
+      <div class="contenido-tarjeta frente">
+        Este es el texto frontal
+      </div>
+      <div class="contenido-tarjeta reverso">
+        Este es el texto del reverso
+      </div>
+    </div>
+  
+    <div class="tarjeta-proyecto" id="proyecto2">
+      <div class="contenido-tarjeta frente">
+        Este es el texto frontal
+      </div>
+      <div class="contenido-tarjeta reverso">
+        Este es el texto del reverso
+      </div>
+    </div>
+  
+    <div class="tarjeta-proyecto" id="proyecto3">
+      <div class="contenido-tarjeta frente">
+        Este es el texto frontal
+      </div>
+      <div class="contenido-tarjeta reverso">
+        Este es el texto del reverso
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <script>
+    const images = [
+      "img1.jpg", "img2.jpg", "img3.jpg",
+      "img4.jpg", "img5.jpg", "img6.jpg",
+      "img7.jpg"
+    ];
+
+    let imageIndex = 0;
+    let lastX = 0;
+    const threshold = 40; // píxeles mínimos recorridos para cambiar la imagen
+
+    document.addEventListener("mousemove", (e) => {
+      const { clientX, clientY } = e;
+
+      // Solo cambia la imagen si el mouse se movió suficiente en X
+      if (Math.abs(clientX - lastX) > threshold) {
+        lastX = clientX;
+
+        // Crear imagen del rastro
+        const img = document.createElement("img");
+        img.src = images[imageIndex];
+        img.className = "trail-image";
+        img.style.left = `${clientX}px`;
+        img.style.top = `${clientY}px`;
+        document.body.appendChild(img);
+
+        // Eliminar después de 1.5s
+        setTimeout(() => img.remove(), 1500);
+
+        // Avanzar al siguiente índice
+        imageIndex = (imageIndex + 1) % images.length;
+      }
+    });
+  </script>
+
+<script>
+  document.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+    const tarjetas = document.querySelectorAll(".tarjeta1");
+
+    tarjetas.forEach((tarjeta11, index) => {
+      let rotacion = ((scrollY+700) / 10) - (index * 20); // Factor de giro
+      //let separacion=(scrollY / 30) - (index * 100);
+      tarjeta11.style.transform = `rotateY(${rotacion+180}deg)`;
+      tarjeta22.style.transform = `rotateY(${rotacion+180}deg)`;
+      tarjeta33.style.transform = `rotateY(${rotacion+180}deg)`;
+      tarjeta44.style.transform = `rotateY(${rotacion+180}deg)`;
+
+      /*tarjeta11.style.left = `${separacion+50}px`;
+      tarjeta22.style.left = `${separacion+100}px`;
+      tarjeta33.style.left = `${separacion+150}px`;
+      tarjeta44.style.left = `${separacion+200}px`;*/
+
+    });
+  });
+</script>
+
+<script>
+  document.addEventListener('scroll', function () {
+  const title = document.querySelector('.unidades-title');
+  const scrollY = window.scrollY;
+  const triggerHeight = 400; // El punto en el que empieza a aparecer el título (ajusta este valor según lo necesites)
+
+  if (scrollY > triggerHeight) {
+    title.classList.add('scroll-active'); // Agrega la clase cuando se pase el umbral
+  } else {
+    title.classList.remove('scroll-active'); // Elimina la clase cuando se vuelva arriba
+  }
+});
+</script>
+
+<script>
+  const logo = document.getElementById('mainLogo');
+
+  logo.addEventListener('mouseenter', () => {
+    logo.src = 'logo_gris.png'; // Cuando pase el cursor encima, cambia el logo
+  });
+
+  logo.addEventListener('mouseleave', () => {
+    logo.src = 'logo_gris.png'; // Cuando salga el cursor, vuelve al logo original
+  });
+</script>
+
+
+
+</body>
+</html>

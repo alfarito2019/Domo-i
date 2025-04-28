@@ -1,0 +1,411 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100vh;
+    background-image: url('Degrade.png');
+    /*background-image: url('Fondo.png');*/
+    /*background: radial-gradient(circle at center, #052049, #0191B4, #D2F1FF);*/
+    /*background:radial-gradient(circle at top left, #fc6b05 5%, transparent 50%),
+              radial-gradient(circle at top right, #052049 10%, transparent 30%),
+              radial-gradient(circle at bottom left, #fc6b05 15%, transparent 50%),
+              radial-gradient(circle at bottom right, #052049 15%, transparent 50%),
+              #427f96;*/
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    cursor: url('Mariposa2.png') 16 16, auto;
+    overflow-y: auto;
+
+    /*background-size: contain; /* << importante para que no se deforme */
+  background-position: center center; /* << centra la imagen */
+  /*background-repeat: no-repeat; /* << no repite la imagen */
+  /*background-color: #ffffff; /* o el color de fondo que quieras detrás */
+  position: relative; 
+
+  }
+
+  nav {
+    height: 60px;
+    background: rgba(255, 255, 255, 0);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 30px;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+  }
+
+  nav .logo {
+    font-weight: bold;
+  }
+
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+  }
+
+  nav a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .content {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .main-logo {
+    width: 700px;
+    transition: transform 0.3s ease;
+  }
+
+  .trail-image {
+    position: absolute;
+    width: 250px;
+    height: 190px;
+    object-fit: cover;
+    border-radius: 8px;
+    transform: translate(-50%, -50%);
+    opacity: 0.95;
+    z-index: 1;
+    pointer-events: none;
+    animation: fadeOut 2s forwards;
+  }
+
+  .logo-small {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  }
+
+  .hero {
+  height: 100vh;
+  background: rgba(255, 255, 255, 0); /* gris translúcido */
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px; /* para no tapar con el navbar */
+  position: relative;
+  z-index: 1;
+  }
+
+  .hero-text {
+  margin-top: 20px;
+  font-size: 80px;
+  font-weight: 700;
+  font-family: 'Comfortaa', cursive;
+  color: rgba(227, 227, 227, 0.80);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  cursor: default;
+  user-select: none;
+  }
+
+  .hero-text span {
+  transition: color 0.2s ease;
+  }
+
+  .hero-text span:hover {
+  color: #ffffff;
+  /*font-size: 50px;*/
+  /*text-shadow: 
+  -1px -1px 0 #FF6B3E,
+   1px -1px 0 #FF6B3E,
+  -1px  1px 0 #FF6B3E,
+   1px  1px 0 #FF6B3E;*/
+  }
+
+  .scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  font-size: 16px;
+  color: rgba(227, 227, 227, 0.80);
+  animation: bounce 1s infinite;
+  opacity: 0.8;
+  }
+
+   .tarjetas-container {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin: 0 0;
+    height: 100vh; 
+  }
+
+  .unidades-section {
+    background-color: #ffffff;
+    height: 50vh; /* Asegura que la sección ocupe toda la pantalla */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .unidades-title {
+    font-size: 6rem;
+    color: transparent; /* Inicialmente transparente */
+    opacity: 0;
+    transition: opacity 1s ease, color 1s ease; /* Transición suave */
+  }
+  
+  .scroll-active {
+    opacity: 1;
+    color: rgb(0, 0, 0); /* Se vuelve blanco cuando el usuario hace scroll */
+  }
+  
+  .tarjeta1 {
+    margin-top: 22vh;
+    width: 285px;
+    height: 400px;
+    position: relative;
+    font-family: 'Comfortaa', cursive;
+    /*background: linear-gradient(135deg, #FFDF88, #DD6902);*/
+    background-image: url('TarjetaHub.png');
+    
+    display: flex;
+    align-items: flex-end; /* ✅ Ahora baja el contenido a la parte inferior */
+    justify-content: center;
+    font-size: 32px;
+    /*font-weight: bold;*/
+    color: white;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;  
+    
+    text-align: center; /* ✅ Centra el texto horizontalmente */
+    padding: 20px;       /* ✅ Agrega espacio interno para que no pegue a los bordes */
+    word-wrap: break-word; /* ✅ Permite que las palabras largas hagan salto de línea */
+    overflow-wrap: break-word; /* ✅ Lo mismo, para compatibilidad extra */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+  } 
+
+  .tarjeta2 {
+    margin-top: 22vh;
+    width: 285px;
+    height: 400px;
+    position: relative;
+    font-family: 'Comfortaa', cursive;
+    /*background: linear-gradient(135deg, #F3797B, #c41e32);*/
+    background-image: url('TarjetaCultura.png');
+    background-color:rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-end; /* ✅ Ahora baja el contenido a la parte inferior */
+    justify-content: center;
+    font-size: 32px;
+    /*font-weight: bold;*/
+    color: white;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
+    
+    text-align: center; /* ✅ Centra el texto horizontalmente */
+    padding: 20px;       /* ✅ Agrega espacio interno para que no pegue a los bordes */
+    word-wrap: break-word; /* ✅ Permite que las palabras largas hagan salto de línea */
+    overflow-wrap: break-word; /* ✅ Lo mismo, para compatibilidad extra */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+  } 
+
+  .tarjeta3 {
+    margin-top: 22vh;
+    width: 285px;
+    height: 400px;
+    position: relative;
+    font-family: 'Comfortaa', cursive;
+    background-color:rgba(0, 0, 0, 0.3);
+    background-image: url('TarjetaInnovacionAbierta.png');
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 32px;
+    /*font-weight: bold;*/
+    color: white;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out; 
+    
+    text-align: center; /* ✅ Centra el texto horizontalmente */
+    padding: 20px;       /* ✅ Agrega espacio interno para que no pegue a los bordes */
+    word-wrap: break-word; /* ✅ Permite que las palabras largas hagan salto de línea */
+    overflow-wrap: break-word; /* ✅ Lo mismo, para compatibilidad extra */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+  } 
+
+  .tarjeta4 {
+    margin-top: 22vh;
+    width: 285px;
+    height: 400px;
+    position: relative;
+    font-family: 'Comfortaa', cursive;
+    /*background: linear-gradient(135deg, #0a9fff, #052049);*/
+    background-image: url('TarjetaIAP.png');
+    background-color:rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    font-size: 32px;
+    /*font-weight: bold;*/
+    color: white;
+    border-radius: 20px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-out;
+    
+    text-align: center; /* ✅ Centra el texto horizontalmente */
+    padding: 20px;       /* ✅ Agrega espacio interno para que no pegue a los bordes */
+    word-wrap: break-word; /* ✅ Permite que las palabras largas hagan salto de línea */
+    overflow-wrap: break-word; /* ✅ Lo mismo, para compatibilidad extra */
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}
+
+
+.proyectos-section {
+  height: 100vh;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  overflow: hidden;
+}
+
+.proyecto-card {
+  width: 250px;
+  height: 350px;
+  background: linear-gradient(135deg, #0055ff, #00d4ff);
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.boton-ver-mas {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #FC6B05;
+  color: #ffffff;
+  font-family: 'Poppins', sans-serif;
+  border: none;
+  border-radius: 20px; /* 🔥 Radio de 20px */
+  font-size: 13px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.boton-ver-mas:hover {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+/* Película negra */
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* 👈 Ajusta la opacidad aquí */
+  border-radius: 15px;
+  z-index: -1; /* Para estar encima de la imagen, pero debajo del contenido */
+}
+
+.proyectos-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 100px 20px;
+  background: transparent; /* Fondo de la sección, ya tienes uno */
+}
+
+.tarjeta-proyecto {
+  width: 285px;
+  height: 400px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Contenido abajo */
+  align-items: center;
+}
+
+.tarjeta-proyecto:hover {
+  transform: rotateY(180deg) scale(1.5);
+}
+
+.contenido-tarjeta {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  backface-visibility: hidden; /* Oculta el contenido al voltear */
+  transition: transform 0.5s; /* Transición suave para el volteo */
+}
+
+.frente {
+  background-color: #3498db; /* Color sólido de la parte frontal */
+}
+
+.reverso {
+  background-color: #e74c3c; /* Color sólido de la parte trasera */
+  transform: rotateY(180deg); /* Voltear 180 grados */
+}
+
+.tarjeta:hover .frente {
+  transform: rotateY(180deg); /* Voltea el frente al pasar el cursor */
+}
+
+.tarjeta:hover .reverso {
+  transform: rotateY(0); /* Muestra el reverso al pasar el cursor */
+  z-index: 1; /* Asegura que el reverso esté encima */
+}
+
+  @keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  }
+
+  @keyframes fadeOut {
+    0% { opacity: 0.95; transform: translate(-50%, -50%) scale(1); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(0.8); }
+  }
